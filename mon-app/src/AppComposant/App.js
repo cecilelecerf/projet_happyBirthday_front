@@ -1,6 +1,6 @@
 import './App.css';
-// import Quote from '../QuoteComposant/Quote';
 import React from 'react';
+import Quote from '../QuoteComposant/Quote';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,25 +39,18 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Chargement…</div>;
     } else {
+      console.log(this.state.TodayQUOTE);
       return (
-        <ul>
-          {TodayQUOTE.map(quote => (
-            <li key={quote}>
-              {quote.author} 
-            </li>
-          ))}
-        </ul>
+        <div className="App">
+          <Quote 
+          quote={this.state.TodayQUOTE.quote}
+          name={this.state.TodayQUOTE.author}
+          />
+        </div>
+
       );
     }
   }
-
-  // return (
-  //   <div className="App">
-  //     <Quote quote="I've missed more than 9,000 shots in my career. I've lost almost 300 games. Twenty-six times I've been trusted to take the game-winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed."
-  //     name="Michael Jordan"
-  //     />
-  //   </div>
-  // );
 
 }
 
