@@ -18,7 +18,7 @@ class App extends React.Component {
       (result) => {
         this.setState({
           isLoaded: true,
-          items: result.items
+          TodayQUOTE: result.TodayQUOTE
         });
       },
       // Remarque : il est important de traiter les erreurs ici
