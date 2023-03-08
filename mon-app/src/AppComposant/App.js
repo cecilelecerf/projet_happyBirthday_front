@@ -13,12 +13,24 @@ class App extends React.Component {
   }
   componentDidMount() {
     fetch("http://localhost:3000/getQuote")
-      .then(res => console.log(res))
- 
-        // Remarque : il est important de traiter les erreurs ici
-        // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-        // des exceptions provenant de réels bugs du composant.
-
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          items: result.items
+        });
+      },
+      // Remarque : il est important de traiter les erreurs ici
+      // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
+      // des exceptions provenant de réels bugs du composant.
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
   }
   render() {
     const { error, isLoaded, TodayQUOTE } = this.state;
