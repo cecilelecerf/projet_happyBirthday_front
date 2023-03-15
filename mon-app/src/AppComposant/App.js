@@ -14,7 +14,8 @@ class App extends React.Component {
       birthday: [],
       TodayQUOTE: [],
       color:'',
-      b:[],
+      test:[],
+      i:0,
     };
 }
   componentDidMount() {
@@ -56,8 +57,30 @@ class App extends React.Component {
         });
       }
     );
-    
+  };
+  timer(){
+      this.state.test = this.state.birthday.students_birthday.students[0];
+      // boucle d'interval interval de 5000ms
+      setInterval(()=>{
+        console.log(this.state.test);
+        // pour faire une boucle du nombre de birthday
+        if (this.state.i < this.state.birthday.count_total){
+          // transmettre les infos
+          this.state.test = this.state.birthday.students_birthday.students[this.state.i];
 
+          // changer l'id (bg)
+          this.state.color = 'color'+this.state.i;
+          // document.getElementById('changeColor').id = this.state.color;
+
+          // incrementation
+          this.state.i++;
+
+        }
+        // redemarrer la boucle
+        else {
+          this.state.i = 0
+        }
+      }, 2000);
   }
 
   render() {
@@ -67,47 +90,21 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Chargement…</div>;
     } else if(this.state.birthday.count_total > 0) {
-
-      // init
-      let i = 0
-      this.state.birthday.students_birthday2 = this.state.birthday.students_birthday.students[0];
-
-      // boucle d'interval interval de 5000ms
-      let p = setInterval(()=>{
-        // pour faire une boucle du nombre de birthday
-        if (i < this.state.birthday.count_total){
-          // transmettre les infos
-          this.state.birthday.students_birthday2 = this.state.birthday.students_birthday.students[i];
-
-          // changer l'id (bg)
-          this.state.color = 'color'+i;
-          document.getElementById('changeColor').id = this.state.color;
-
-          // incrementation
-          i++;
-
-        }
-        // redemarrer la boucle
-        else {
-          i = 0
-        }
-      }, 5000);
-
+    this.timer();
         return (
           <div className="App">
             <NavBar/>
             <div class="flex" id="changeColor">
-              <Left birthdayApi={this.state.birthday.students_birthday2}/>
+              <Left birthdayApi={this.state.test}/>
               <Right/>
             </div>
           </div>
-
       )}
+
     else{
       return(
       <div className="App">
         <div class="solo">
-
         <NavBar/>
         <Quote                    
           quote={this.state.TodayQUOTE.quote}
@@ -116,13 +113,6 @@ class App extends React.Component {
           </div>
       </div>
     )}
-  
-
-
   }
-
 }
-
-
-
 export default App;
