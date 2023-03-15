@@ -1,8 +1,8 @@
 .Quote{
     margin-top: 300px;
     position: relative;
-    width: 675px;
-    height: 208px;
+    width: 40%;
+    height: 25%;
     background-color: #DF80AC;
     border: solid 2px #000;
     border-radius: 14px;
@@ -10,8 +10,8 @@
         position: absolute;
         bottom: 9px;
         left: 8px;
-        width: calc(675px - (24px + 35px));
-        height: calc(208px - 78px);
+        width: calc(100% - (24px + 35px));
+        height: calc(100% - 78px);
         padding: 25px 24px 53px 35px;
         background-color: #fff;
         border: solid 2px #000;

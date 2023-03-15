@@ -1,0 +1,41 @@
+.Left{
+    background-color: #DF80AC;
+    width: 50%;
+    height: 90%;
+
+}
+
+#circle--container{
+    position: relative;
+    background-color: #000000;
+    border-radius: 100%;
+    width: 403px;
+    height: 403px;
+    margin: 0 auto;
+    
+    & > div {
+        position: absolute;
+        top: -17px;
+        left: 12px;
+        background-color: #FFFFFF;
+        border-radius: 100%;
+        width: 403px;
+        height: 403px;
+    }
+
+    h1{
+        color: #DF80AC;
+        // text-shadow: 0px 0px 2px black;
+        // border: solid #000 3px;
+        font-size: 80px;
+        font-weight: bold;
+        -webkit-text-stroke: 3px #000000
+    }
+}
+
+.Left .birthday{
+    p{
+        margin-left: 10%;
+        text-align: left;
+    }
+}

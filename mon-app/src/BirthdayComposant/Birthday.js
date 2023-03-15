@@ -1,11 +1,10 @@
 // import '../css/Quote.css';
 
-function Quote(birthdayApi) {
+function birthday(birthdayApi) {
     return(
         <div className="birthday">
             
             <div>
-                <p>{birthdayApi.quote}</p>
                 <p>- {birthdayApi.name}</p>
             </div>
         </div>
@@ -14,4 +13,4 @@ function Quote(birthdayApi) {
 };
 
 
-export default Quote;
+export default birthday;

@@ -4,3 +4,9 @@
   height: 860px;
 }
 
+.flex{
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+
