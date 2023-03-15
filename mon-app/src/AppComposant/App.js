@@ -12,7 +12,9 @@ class App extends React.Component {
       error: null,
       isLoaded: false,
       birthday: [],
-      TodayQUOTE: []
+      TodayQUOTE: [],
+      color:'',
+      b:[],
     };
 }
   componentDidMount() {
@@ -53,7 +55,9 @@ class App extends React.Component {
           error
         });
       }
-    )
+    );
+    
+
   }
 
   render() {
@@ -63,26 +67,53 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Chargement…</div>;
     } else if(this.state.birthday.count_total > 0) {
-      for(let i =0; i<this.state.birthday.count_total; i++){
-        console.log(this.state.birthday.students_birthday.students[i].lastname);
+
+      // init
+      let i = 0
+      this.state.birthday.students_birthday2 = this.state.birthday.students_birthday.students[0];
+
+      // boucle d'interval interval de 5000ms
+      let p = setInterval(()=>{
+        // pour faire une boucle du nombre de birthday
+        if (i < this.state.birthday.count_total){
+          // transmettre les infos
+          this.state.birthday.students_birthday2 = this.state.birthday.students_birthday.students[i];
+
+          // changer l'id (bg)
+          this.state.color = 'color'+i;
+          document.getElementById('changeColor').id = this.state.color;
+
+          // incrementation
+          i++;
+
+        }
+        // redemarrer la boucle
+        else {
+          i = 0
+        }
+      }, 5000);
+
         return (
           <div className="App">
-          <NavBar/>
-          <div class="flex">
-            <Left birthdayApi={this.state.birthday.students_birthday.students[i]}/>
-            <Right/>
+            <NavBar/>
+            <div class="flex" id="changeColor">
+              <Left birthdayApi={this.state.birthday.students_birthday2}/>
+              <Right/>
+            </div>
           </div>
-        </div>
 
-      )}}
+      )}
     else{
       return(
       <div className="App">
+        <div class="solo">
+
         <NavBar/>
         <Quote                    
           quote={this.state.TodayQUOTE.quote}
           name={this.state.TodayQUOTE.author}
-        />
+          />
+          </div>
       </div>
     )}
   

@@ -1,8 +1,10 @@
 .App {
   text-align: center;
-  width:1512px ;
-  height: 860px;
+  /* /* width:1512px ; */
+  height: 1000px; 
+  background-color: #df80ac;
 }
+
 
 .flex{
   display: flex;
@@ -10,3 +12,7 @@
   justify-content: space-between;
 }
 
+
+.solo{
+  background-color: #df80ac;
+}
