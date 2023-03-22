@@ -12,10 +12,13 @@ class App extends React.Component {
       error: null,
       isLoaded: false,
       birthday: [],
+      currentBirthday:[],
       TodayQUOTE: [],
-      color:'',
-      test:[],
+      color:'red',
       i:0,
+      colors: ['#df80ac', '#579FF4', '#FCB325','#098E27'],
+      currentColors: []
+
     };
 }
   componentDidMount() {
@@ -23,21 +26,21 @@ class App extends React.Component {
     .then(res => res.json())
     .then(
       (result) => {
+        let birthday=[];
+        birthday = {count_total : result.count_total, list : result.students_birthday.students.concat(result.teachers_birthday.teachers)};
         this.setState({
           isLoaded: true,
-          birthday: result
+          birthday: birthday,
+          currentBirthday: result.students_birthday.students[0]
         });
       },
-      // Remarque : il est important de traiter les erreurs ici
-      // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-      // des exceptions provenant de réels bugs du composant.
       (error) => {
         this.setState({
           isLoaded: true,
           error
         });
       }
-    );
+    )
     fetch("http://localhost:3000/getQuote")
     .then(res => res.json())
     .then(
@@ -47,9 +50,6 @@ class App extends React.Component {
           TodayQUOTE: result.TodayQUOTE
         });
       },
-      // Remarque : il est important de traiter les erreurs ici
-      // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-      // des exceptions provenant de réels bugs du composant.
       (error) => {
         this.setState({
           isLoaded: true,
@@ -57,31 +57,38 @@ class App extends React.Component {
         });
       }
     );
+    let currentBirthday = {};
+    let currentColors = {};
+    let i = 1;
+    let color = 'color'+1;
+
+    // boucle d'interval interval de 5000ms
+    this.timerId = setInterval(()=>{
+      // pour faire une boucle du nombre de birthday
+      if (i < this.state.birthday.count_total){
+        currentBirthday = this.state.birthday.list[i];
+        currentColors = this.state.colors[i];
+        color = 'color'+i;
+        i++;
+      }
+      else {
+        i = 0
+      }
+      
+      // transmis d'info pour sortie de boucle
+      this.setState({
+        currentBirthday: currentBirthday,
+        i: i,
+        color: color,
+        currentColors: currentColors
+      })
+    },5000)
   };
-  timer(){
-      this.state.test = this.state.birthday.students_birthday.students[0];
-      // boucle d'interval interval de 5000ms
-      setInterval(()=>{
-        console.log(this.state.test);
-        // pour faire une boucle du nombre de birthday
-        if (this.state.i < this.state.birthday.count_total){
-          // transmettre les infos
-          this.state.test = this.state.birthday.students_birthday.students[this.state.i];
-
-          // changer l'id (bg)
-          this.state.color = 'color'+this.state.i;
-          // document.getElementById('changeColor').id = this.state.color;
-
-          // incrementation
-          this.state.i++;
-
-        }
-        // redemarrer la boucle
-        else {
-          this.state.i = 0
-        }
-      }, 2000);
+  componentWillUnmount(){
+    clearInterval(this.timerId)
   }
+  
+
 
   render() {
     const { error, isLoaded, birthday, TodayQUOTE } = this.state;
@@ -90,13 +97,12 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Chargement…</div>;
     } else if(this.state.birthday.count_total > 0) {
-    this.timer();
         return (
           <div className="App">
             <NavBar/>
-            <div class="flex" id="changeColor">
-              <Left birthdayApi={this.state.test}/>
-              <Right/>
+            <div className="flex" style={{backgroundColor: this.state.currentColors}}>
+              <Left birthdayApi={this.state.currentBirthday} colors={this.state.colors}/>
+              <Right colors={this.state.currentColors}/>
             </div>
           </div>
       )}
@@ -104,7 +110,7 @@ class App extends React.Component {
     else{
       return(
       <div className="App">
-        <div class="solo">
+        <div className="solo">
         <NavBar/>
         <Quote                    
           quote={this.state.TodayQUOTE.quote}
