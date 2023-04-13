@@ -1,32 +1,41 @@
-import { useEffect } from 'react';
+
 import '../css/Quote.css';
 
-function Quote(props) {
-    let element = document.getElementById('front');
-    // console.log(element.style.height);
-    // let hauteur = element.getBoundingClientRect()   ;
-    useEffect(()=>{
-        if(element.current){
-            const height = element.clientHeight;
-            console.log(height);
-        }
+import React from 'react';
 
-    }, []);
-    return(
+class Quote extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            hauteur:0,
+            largeur:0,
+          };
+
+    }
+    componentDidMount(){
+        this.state.hauteur = document.getElementById('front').clientHeight;
         
-        <div className="Quote">
-            <div id='front'>
+        this.state.largeur = document.getElementById('front').clientWidth;
 
-                <p>{props.quote}</p>
-                <p>- {props.name}</p>
-            </div>
-            <div style={{backgroundColor: props.currentColors, }} id='back'>
-            </div>
-        </div>            
+    }
 
-    );
+    render(){
+        return(
+        
+            <div className="Quote">
+                <div id='front'>
     
-};
+                    <p>{this.props.quote}</p>
+                    <p>- {this.props.name}</p>
+                </div>
+                <div style={{backgroundColor: this.props.currentColors, height:this.state.hauteur, width:this.state.largeur}} id='back'>
+                </div>
+            </div>            
+    
+        );
+
+    }
+}
 
 
 export default Quote;
