@@ -16,7 +16,8 @@ class App extends React.Component {
       TodayQUOTE: [],
       i:0,
       colors: ['#df80ac', '#579FF4', '#FCB325','#098E27'],
-      currentColors: []
+      currentColors: [],
+      pourcentage: "",
 
     };
 }
@@ -60,6 +61,7 @@ class App extends React.Component {
     let currentBirthday = {};
     let currentColors = {};
     let i = 0;
+    let pourcentage = "";
 
      // boucle d'interval interval de 5000ms
      this.timerId = setInterval(()=>{
@@ -67,12 +69,14 @@ class App extends React.Component {
       this.state.i == this.state.birthday.count_total-1 ? i=0 : i++;
       currentBirthday = this.state.birthday.list[i];
       currentColors = this.state.colors[i];
-      console.log(this.state.colors[i]);
+      pourcentage = (i+1)*100 / this.state.birthday.count_total +"%";
+
       // transmis d'info pour sortie de boucle
       this.setState({
         currentBirthday: currentBirthday,
         i: i,
-        currentColors: currentColors
+        currentColors: currentColors,
+        pourcentage : pourcentage
       })
     },5000)
   };
@@ -99,6 +103,7 @@ class App extends React.Component {
                 TodayQUOTE={this.state.TodayQUOTE} 
                 count_total={this.state.birthday.count_total}
                 i={this.state.i}
+                pourcentage={this.state.pourcentage}
               />
             </div>
           </div>

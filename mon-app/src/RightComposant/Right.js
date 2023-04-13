@@ -4,6 +4,7 @@ import React from 'react';
 
 function Right (props) {
   let i = props.i +1;
+
   return(
     <div className="Right">
       <Quote 
@@ -11,10 +12,10 @@ function Right (props) {
         name={props.TodayQUOTE.author}
         currentColors={props.currentColors}
       />
-      <div>
+      <div id='progress'>
         <p>0{i}</p>
         <div className="bar">
-          <div>
+          <div style={{width:props.pourcentage, backgroundColor: props.currentColors}}>
           </div>
         </div>
         <p>0{props.count_total}</p>

@@ -1,1 +1,1 @@
-.Right{background-color:#fff;width:50%;height:90%}
+.Right{background-color:#fff;width:50%;height:100vh}#progress{display:flex;justify-content:space-between;align-items:center;margin:0 auto;width:50%}#progress .bar{width:70%;height:20px;border:solid 2px #000;border-radius:14px}#progress .bar div{height:20px;border-radius:14px}

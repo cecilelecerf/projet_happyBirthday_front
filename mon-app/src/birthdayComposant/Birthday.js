@@ -1,4 +1,4 @@
-// import '../css/Quote.css';
+import '../css/Birthday.css';
 
 function Birthday(birthdayApi) {
     return(
