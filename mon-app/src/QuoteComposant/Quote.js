@@ -1,12 +1,14 @@
 import '../css/Quote.css';
 
-function Quote(quoteApi) {
+function Quote(props) {
     return(
-        <div className="Quote">
+        <div className="Quote"
+        style={{backgroundColor: props.currentColors}}
+        >
             
             <div>
-                <p>{quoteApi.quote}</p>
-                <p>- {quoteApi.name}</p>
+                <p>{props.quote}</p>
+                <p>- {props.name}</p>
             </div>
         </div>
     );

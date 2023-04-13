@@ -14,7 +14,6 @@ class App extends React.Component {
       birthday: [],
       currentBirthday:[],
       TodayQUOTE: [],
-      color:'red',
       i:0,
       colors: ['#df80ac', '#579FF4', '#FCB325','#098E27'],
       currentColors: []
@@ -57,29 +56,22 @@ class App extends React.Component {
         });
       }
     );
+
     let currentBirthday = {};
     let currentColors = {};
-    let i = 1;
-    let color = 'color'+1;
+    let i = 0;
 
-    // boucle d'interval interval de 5000ms
-    this.timerId = setInterval(()=>{
+     // boucle d'interval interval de 5000ms
+     this.timerId = setInterval(()=>{
       // pour faire une boucle du nombre de birthday
-      if (i < this.state.birthday.count_total){
-        currentBirthday = this.state.birthday.list[i];
-        currentColors = this.state.colors[i];
-        color = 'color'+i;
-        i++;
-      }
-      else {
-        i = 0
-      }
-      
+      this.state.i == this.state.birthday.count_total-1 ? i=0 : i++;
+      currentBirthday = this.state.birthday.list[i];
+      currentColors = this.state.colors[i];
+      console.log(this.state.colors[i]);
       // transmis d'info pour sortie de boucle
       this.setState({
         currentBirthday: currentBirthday,
         i: i,
-        color: color,
         currentColors: currentColors
       })
     },5000)
@@ -101,8 +93,13 @@ class App extends React.Component {
           <div className="App">
             <NavBar/>
             <div className="flex" style={{backgroundColor: this.state.currentColors}}>
-              <Left birthdayApi={this.state.currentBirthday} colors={this.state.colors}/>
-              <Right colors={this.state.currentColors}/>
+              <Left birthdayApi={this.state.currentBirthday} colors={this.state.currentColors}/>
+              <Right 
+                currentColors={this.state.currentColors} 
+                TodayQUOTE={this.state.TodayQUOTE} 
+                count_total={this.state.birthday.count_total}
+                i={this.state.i}
+              />
             </div>
           </div>
       )}
