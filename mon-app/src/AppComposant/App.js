@@ -65,10 +65,9 @@ class App extends React.Component {
     // boucle d'interval interval de 5000ms
     this.timerId = setInterval(()=>{
       // pour faire une boucle du nombre de birthday
-      i = this.state.birthday.count_total ? i=0 : i;
+      this.state.i == this.state.birthday.count_total-1 ? i=0 : i++;
       currentBirthday = this.state.birthday.list[i];
       currentColors = this.state.colors.i;
-      i++;      
       // transmis d'info pour sortie de boucle
       this.setState({
         currentBirthday: currentBirthday,
@@ -90,8 +89,6 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Chargement…</div>;
     } else if(this.state.birthday.count_total > 0) {
-      console.log(this.state.i);
-      console.log(this.state.currentColors)
         return (
           <div className="App">
             <NavBar/>
