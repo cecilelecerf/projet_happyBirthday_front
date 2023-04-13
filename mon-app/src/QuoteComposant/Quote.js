@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import '../css/Quote.css';
 
 function Quote(props) {
     let element = document.getElementById('front');
-    console.log(element.style.height);
+    // console.log(element.style.height);
     // let hauteur = element.getBoundingClientRect()   ;
+    useEffect(()=>{
+        if(element.current){
+            const height = element.clientHeight;
+            console.log(height);
+        }
+
+    }, []);
     return(
         
         <div className="Quote">
