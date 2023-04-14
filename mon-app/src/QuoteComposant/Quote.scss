@@ -1,38 +1,17 @@
 .Quote{
-
-    #front{
-        position: relative;
-        margin : 10% auto;
-        width: 50%;
-        padding: 30px;
-        background-color: #fff;
-        border: solid 2px #000;
-        border-radius: 14px;
-        z-index: 2;
-        p{
-            text-align: justify;
-            &:nth-child(2){
-                text-align: end;
-            }
+    position: relative;
+    margin : 6% auto;
+    width: 65%;
+    padding: 20px 30px;
+    background-color: #fff;
+    border: solid 2px #000;
+    border-radius: 14px;
+    z-index: 2;
+    box-shadow: -6px 6px #DF80AC, -8px 8px #000;
+    p{
+        text-align: justify;
+        &:nth-child(2){
+            text-align: end;
         }
-
     }
-    #back {
-        top: 22%;
-        left: 59%;
-        position: absolute;
-        width: 50%;
-        min-height: 10%;
-        background-color: #DF80AC;
-        border: solid 2px #000;
-        border-radius: 14px;
-        z-index: 0;
-
-
-    }
-}
-
-.solo .Quote #back{
-    left: 21.5%;
-    top: 40%;
 }

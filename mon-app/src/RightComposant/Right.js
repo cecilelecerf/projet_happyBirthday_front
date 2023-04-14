@@ -1,6 +1,7 @@
 import '../css/Right.css';
 import Quote from '../QuoteComposant/Quote';
 import React from 'react';
+import Gif from '../GifComposant/Gif';
 
 function Right (props) {
   let i = props.i +1;
@@ -12,6 +13,7 @@ function Right (props) {
         name={props.TodayQUOTE.author}
         currentColors={props.currentColors}
       />
+      <Gif/>
       <div id='progress'>
         <p>0{i}</p>
         <div className="bar">
