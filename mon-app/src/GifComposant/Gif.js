@@ -2,8 +2,10 @@ import '../css/Gif.css';
 import React from 'react';
 function Gif(props) {
     return( 
-        <div className="Gif">
-            <img src='./images/image 2.png'/>
+        <div className="Gif" style={{boxShadow: "-6px 6px "+props.currentColors+", -8px 8px #000"}}>
+            <figure>
+                <img src={'./images/'+props.currentImage}/>
+            </figure>
         </div>
     )
 }

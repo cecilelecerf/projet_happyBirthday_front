@@ -16,8 +16,10 @@ class App extends React.Component {
       TodayQUOTE: [],
       i:0,
       colors: ['#df80ac', '#579FF4', '#FCB325','#098E27'],
-      currentColors: [],
-      pourcentage: "",
+      currentColors: "#df80ac",
+      pourcentage: "20%",
+      images : ['hearth.png', 'flower.png', 'friedEgg.png', 'pen.png'],
+      currentImage: 'hearth.png',
 
     };
 }
@@ -61,6 +63,7 @@ class App extends React.Component {
 
     let currentBirthday = {};
     let currentColors = {};
+    let currentImage = {};
     let i = 0;
     let pourcentage = "";
 
@@ -70,6 +73,7 @@ class App extends React.Component {
       this.state.i == this.state.birthday.count_total-1 ? i=0 : i++;
       currentBirthday = this.state.birthday.list[i];
       currentColors = this.state.colors[i];
+      currentImage = this.state.images[i];
       pourcentage = (i+1)*100 / this.state.birthday.count_total +"%";
 
       // transmis d'info pour sortie de boucle
@@ -77,7 +81,8 @@ class App extends React.Component {
         currentBirthday: currentBirthday,
         i: i,
         currentColors: currentColors,
-        pourcentage : pourcentage
+        pourcentage : pourcentage,
+        currentImage : currentImage,
       })
     },5000)
   };
@@ -105,6 +110,7 @@ class App extends React.Component {
                 count_total={this.state.birthday.count_total}
                 i={this.state.i}
                 pourcentage={this.state.pourcentage}
+                currentImage={this.state.currentImage}
               />
             </div>
           </div>

@@ -4,12 +4,16 @@
     background-color: #fff;
     width: 65%;
     height: 25%;
-    box-shadow: -3px 3px #DF80AC;
-    padding: 30px;
+    box-shadow: -6px 6px #DF80AC, -8px 8px #000;
+    padding: 20px 30px;
     margin: 6% auto;
-    img{
-        width: 60%;
-        object-fit: contain;
+    margin-bottom: 2%;
+    figure{
+        height: 100%;
+        margin: auto 0;
+        img{
+            height: 100%;
+        }
     }
 
 }

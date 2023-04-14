@@ -13,7 +13,10 @@ function Right (props) {
         name={props.TodayQUOTE.author}
         currentColors={props.currentColors}
       />
-      <Gif/>
+      <Gif
+        currentColors={props.currentColors}
+        currentImage={props.currentImage}
+      />
       <div id='progress'>
         <p>0{i}</p>
         <div className="bar">
