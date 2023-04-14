@@ -14,7 +14,6 @@ class Quote extends React.Component {
     }
     componentDidMount(){
         this.state.hauteur = document.getElementById('front').clientHeight;
-        
         this.state.largeur = document.getElementById('front').clientWidth;
 
     }
