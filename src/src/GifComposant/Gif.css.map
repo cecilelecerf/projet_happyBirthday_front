@@ -1,1 +1,1 @@
-{"version":3,"sources":["Gif.scss","Gif.css"],"names":[],"mappings":"AAOI;EACI,YAAA;EACA,cAAA;ACNR;ADOQ;EACI,YAAA;ACLZ","file":"Gif.css"}
+{"version":3,"sources":["Gif.scss","../css/_mixin.scss","Gif.css"],"names":[],"mappings":"AACA;EACI,UAAA;EACA,WAAA;EACA,kBAAA;EACA,eAAA;EACA,iBAAA;ECLA,sBAAA;EACA,sBAAA;EACA,mBAAA;EACA,UAAA;EACA,2CAAA;ACMJ;AFHI;EACI,YAAA;EACA,cAAA;AEKR;AFJQ;EACI,YAAA;AEMZ","file":"Gif.css"}

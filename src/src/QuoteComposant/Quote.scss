@@ -1,12 +1,11 @@
-@import "../css/main.css";
-
+@use "../css/main";
 .Quote{
     position: relative;
     margin : 0 auto;
     width: 65%;
     padding: 20px 30px;
 
-    @include borderBox;
+    @include mixin.borderBox;
     p{
         text-align: justify;
         &:nth-child(2){
