@@ -7,6 +7,7 @@ function Quote (props) {
             <p>{props.quote}</p>
             <p>- {props.name}</p>
         </div>            
+
     );
 }
 

@@ -13,6 +13,7 @@ function Right (props) {
         name={props.TodayQUOTE.author}
         currentColors={props.currentColors}
       />
+
       <Gif
         currentColors={props.currentColors}
         currentImage={props.currentImage}
