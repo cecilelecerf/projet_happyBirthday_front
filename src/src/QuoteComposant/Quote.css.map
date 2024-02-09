@@ -1,1 +1,1 @@
-{"version":3,"sources":["Quote.scss","Quote.css"],"names":[],"mappings":"AAAA;EACI,kBAAA;EACA,cAAA;EACA,UAAA;EACA,kBAAA;EACA,sBAAA;EACA,sBAAA;EACA,mBAAA;EACA,UAAA;EACA,2CAAA;ACCJ;ADAI;EACI,mBAAA;ACER;ADDQ;EACI,eAAA;ACGZ","file":"Quote.css"}
+{"version":3,"sources":["Quote.scss","../css/main.scss","Quote.css"],"names":[],"mappings":"AACA;EACI,kBAAA;EACA,cAAA;EACA,UAAA;EACA,kBAAA;ECHA,sBAAA;EACA,sBAAA;EACA,mBAAA;EACA,UAAA;EACA,2CAAA;ACIJ;AFFI;EACI,mBAAA;AEIR;AFHQ;EACI,eAAA;AEKZ","file":"Quote.css"}
