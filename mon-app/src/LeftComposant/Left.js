@@ -10,23 +10,15 @@ function Left(props) {
                     <Circle colors={props.colors}/> 
                 </div>
             </div>
-
-                
             <Birthday
             lastname={props.birthdayApi.lastname}
             firstname={props.birthdayApi.firstname}
             />
-
-            <img src="./Star.svg" className='star1'/>
-            <img src="./Star.svg" className='star2'/>
-            <img src="./Star.svg" className='star3'/>
-
+            <img src="./Star.svg" className='star1' alt='test'/>
+            <img src="./Star.svg" className='star2' alt='test'/>
+            <img src="./Star.svg" className='star3' alt='test'/>
         </div>
     )
-
-
-        
-    
 }
 
 

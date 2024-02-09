@@ -55,6 +55,7 @@ class App extends React.Component {
         });
       },
       (error) => {
+        console.log(error)
         this.setState({
           isLoaded: true,
           error
@@ -72,7 +73,7 @@ class App extends React.Component {
      // boucle d'interval interval de 5000ms
      this.timerId = setInterval(()=>{
       // pour faire une boucle du nombre de birthday
-      this.state.i == this.state.birthday.count_total-1 ? i=0 : i++;
+      this.state.i === this.state.birthday.count_total-1 ? i=0 : i++;
       currentBirthday = this.state.birthday.list[i];
       currentColors = this.state.colors[i];
       currentImage = this.state.images[i];
@@ -95,7 +96,7 @@ class App extends React.Component {
 
 
   render() {
-    const { error, isLoaded, birthday, TodayQUOTE } = this.state;
+    const { error, isLoaded } = this.state;
     if (error) {
       return <div>Erreur : {error.message}</div>;
     } else if (!isLoaded) {
@@ -105,15 +106,12 @@ class App extends React.Component {
           <div className="App">
             <NavBar/>
             <div className="flex" style={{backgroundColor: this.state.currentColors}}>
-
               <Left birthdayApi={this.state.currentBirthday} colors={this.state.currentColors}/>
-
               <Right 
                 currentColors={this.state.currentColors} 
                 TodayQUOTE={this.state.TodayQUOTE} 
                 count_total={this.state.birthday.count_total}
                 i={this.state.i}
-
                 pourcentage={this.state.pourcentage}
                 currentImage={this.state.currentImage}
               />
