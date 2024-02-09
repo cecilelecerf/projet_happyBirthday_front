@@ -1,0 +1,41 @@
+.Right{
+    background-color: #fff;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#progress{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+   .bar{
+    width: 70%;
+    height: 20px;
+    border: solid 2px #000;
+    border-radius: 14px;
+    z-index: 2;
+    box-shadow: -3px 3px #000;
+
+        div{
+            height: 20px;         
+            border-radius: 14px;
+            z-index: 2;
+            width: 0; /* Définit la largeur initiale à 0% */
+            animation: expandWidth 5000ms linear infinite; /* Animation de transition sur la largeur pendant 5000ms (5 secondes) en boucle */
+            @keyframes expandWidth {
+                0% {
+                    width: 0;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+              
+        }
+    } 
+
+}

@@ -1,7 +1,8 @@
 
-import '../css/Quote.css';
+import './Quote.css';
 
 function Quote (props) {
+    console.log(props)
     return(     
         <div className="Quote" style={{boxShadow: "-6px 6px "+props.currentColors+", -8px 8px #000"}}>
             <p>{props.quote}</p>

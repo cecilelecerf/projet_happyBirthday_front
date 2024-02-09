@@ -1,4 +1,4 @@
-import '../css/Right.css';
+import './Right.css';
 import Quote from '../QuoteComposant/Quote';
 import React from 'react';
 import Gif from '../GifComposant/Gif';
@@ -21,7 +21,7 @@ function Right (props) {
       <div id='progress'>
         <p>0{i}</p>
         <div className="bar">
-          <div style={{width:props.pourcentage, backgroundColor: props.currentColors}}>
+          <div style={{backgroundColor: props.currentColors}}>
           </div>
         </div>
         <p>0{props.count_total}</p>

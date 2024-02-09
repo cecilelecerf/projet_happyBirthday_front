@@ -13,7 +13,7 @@ class App extends React.Component {
       isLoaded: false,
       birthday: [],
       currentBirthday:[],
-      TodayQUOTE: [],
+      TodayQUOTE:{},
       i:0,
 
       colors: ['#df80ac', '#579FF4', '#FCB325','#098E27'],
@@ -48,10 +48,9 @@ class App extends React.Component {
     .then(res => res.json())
     .then(
       (result) => {
-        console.log(result);
         this.setState({
           isLoaded: true,
-          TodayQUOTE: result.TodayQUOTE
+          TodayQUOTE: result.QUOTE
         });
       },
       (error) => {
@@ -82,7 +81,6 @@ class App extends React.Component {
       this.setState({
         currentBirthday: currentBirthday,
         i: i,
-
         currentColors: currentColors,
         pourcentage : pourcentage,
         currentImage : currentImage,
@@ -124,6 +122,7 @@ class App extends React.Component {
       <div className="App">
         <div className="solo">
         <NavBar/>
+        {console.log(this.state)}
         <Quote                    
           quote={this.state.TodayQUOTE.quote}
           name={this.state.TodayQUOTE.author}

@@ -1,4 +1,4 @@
-import '../css/Gif.css';
+import './Gif.css';
 import React from 'react';
 function Gif(props) {
     return( 

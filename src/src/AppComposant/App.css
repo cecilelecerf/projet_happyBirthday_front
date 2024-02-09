@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: #df80ac;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  height: 90%;
+  width: 100%;
+}
+
+.solo {
+  background-color: #df80ac;
+}/*# sourceMappingURL=App.css.map */
