@@ -1,27 +1,17 @@
 .Quote{
-    margin-top: 300px;
     position: relative;
-    width: 675px;
-    height: 208px;
-    background-color: #DF80AC;
+    margin : 6% auto;
+    width: 65%;
+    padding: 20px 30px;
+    background-color: #fff;
     border: solid 2px #000;
     border-radius: 14px;
-    & > div {
-        position: absolute;
-        bottom: 9px;
-        left: 8px;
-        width: calc(675px - (24px + 35px));
-        height: calc(208px - 78px);
-        padding: 25px 24px 53px 35px;
-        background-color: #fff;
-        border: solid 2px #000;
-        border-radius: 14px;
-        p{
-            height: fit-content;
-            text-align: justify;
-            &:nth-child(2){
-                text-align: end;
-            }
+    z-index: 2;
+    box-shadow: -6px 6px #DF80AC, -8px 8px #000;
+    p{
+        text-align: justify;
+        &:nth-child(2){
+            text-align: end;
         }
     }
 }

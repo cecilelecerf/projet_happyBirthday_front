@@ -1,17 +1,14 @@
+
 import '../css/Quote.css';
 
-function Quote(quoteApi) {
-    return(
-        <div className="Quote">
-            
-            <div>
-                <p>{quoteApi.quote}</p>
-                <p>- {quoteApi.name}</p>
-            </div>
-        </div>
-    );
-    
-};
+function Quote (props) {
+    return(     
+        <div className="Quote" style={{boxShadow: "-6px 6px "+props.currentColors+", -8px 8px #000"}}>
+            <p>{props.quote}</p>
+            <p>- {props.name}</p>
+        </div>            
 
+    );
+}
 
 export default Quote;

@@ -1,0 +1,1 @@
+.NavBar{width:calc(100% - 90px);height:10%;display:flex;justify-content:space-between;align-items:center;background-color:#fff;padding:0 45px;border-bottom:solid 1px #000}.NavBar p{font-size:35px}.NavBar p:nth-child(2){text-transform:capitalize}

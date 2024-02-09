@@ -1,0 +1,61 @@
+.Left{
+    // background-color: #DF80AC;
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    .star1{
+        position: absolute;
+        z-index: 0;
+        top: 74px;
+        left: 66px;
+    }
+    .star2{
+        position: absolute;
+        z-index: 0;
+        top: 295px;
+        left: 509px;
+    }
+    .star3{
+        position: absolute;
+        z-index: 0;
+        top: 373px;
+        left: 100px;
+    }
+
+}
+#circle--container{
+    position: relative;
+    background-color: #000000;
+    border-radius: 100%;
+    width: 370px;
+    height: 370px;
+    margin: 40px auto;
+    z-index: 1;
+    
+    & > div {
+        border: solid #000 2px;
+        position: absolute;
+        top: -17px;
+        left: 12px;
+        background-color: #FFFFFF;
+        border-radius: 100%;
+        width: 370px;
+        height: 370px;
+    }
+
+    h1{
+        // text-shadow: 0px 0px 2px black;
+        // border: solid #000 3px;
+        font-size: 80px;
+        font-weight: bold;
+        -webkit-text-stroke: 3px #000000
+    }
+}
+
+.Left .birthday{
+    z-index: 1;
+    p{
+        margin-left: 10%;
+        text-align: left;
+    }
+}

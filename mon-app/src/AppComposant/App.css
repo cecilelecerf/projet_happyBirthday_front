@@ -1,6 +1,16 @@
 .App {
   text-align: center;
-  width:1512px ;
-  height: 860px;
+  height: 100vh;
+  background-color: #df80ac;
 }
 
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.solo{
+  background-color: #df80ac;
+}
