@@ -81,7 +81,6 @@ class App extends React.Component {
       this.setState({
         currentBirthday: currentBirthday,
         i: i,
-
         currentColors: currentColors,
         pourcentage : pourcentage,
         currentImage : currentImage,

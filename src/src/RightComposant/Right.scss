@@ -1,7 +1,9 @@
 .Right{
     background-color: #fff;
     width: 50%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #progress{
     display: flex;
@@ -22,7 +24,17 @@
             height: 20px;         
             border-radius: 14px;
             z-index: 2;
-
+            width: 0; /* Définit la largeur initiale à 0% */
+            animation: expandWidth 5000ms linear infinite; /* Animation de transition sur la largeur pendant 5000ms (5 secondes) en boucle */
+            @keyframes expandWidth {
+                0% {
+                    width: 0;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+              
         }
     } 
 

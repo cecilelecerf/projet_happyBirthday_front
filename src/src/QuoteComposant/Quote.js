@@ -1,5 +1,5 @@
 
-import '../css/Quote.css';
+import './Quote.css';
 
 function Quote (props) {
     console.log(props)

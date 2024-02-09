@@ -1,4 +1,4 @@
-import '../css/Left.css';
+import './Left.css';
 import React from 'react';
 import Birthday from '../birthdayComposant/Birthday';
 import Circle from './Circle';
@@ -14,9 +14,9 @@ function Left(props) {
             lastname={props.birthdayApi.lastname}
             firstname={props.birthdayApi.firstname}
             />
-            <img src="./Star.svg" className='star1' alt='test'/>
-            <img src="./Star.svg" className='star2' alt='test'/>
-            <img src="./Star.svg" className='star3' alt='test'/>
+            <img src="./Star.svg" className='star' id='star1' alt='test'/>
+            <img src="./Star.svg" className='star' id='star2' alt='test'/>
+            <img src="./Star.svg" className='star' id='star3'alt='test'/>
         </div>
     )
 }
